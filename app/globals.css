@@ -55,6 +55,11 @@ body {
   border-radius: 8px;
 }
 
+.blob-cursor.hover-skill {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 50%;
+}
+
 .wrapper {
   position: relative;
   max-width: 800px;
@@ -203,9 +208,14 @@ h2:hover {
   color: #777;
   font-size: 0.9em;
   white-space: nowrap;
+  transition: transform 0.2s ease;
+  transform-origin: right center;
+  display: inline-block;
 }
 
-.experience-company {
+.experience-date:hover {
+  transform: scale(1.02);
+}
   color: #666;
   font-size: 0.95em;
   margin-bottom: 8px;
@@ -246,12 +256,26 @@ h2:hover {
   font-weight: 600;
   color: #333;
   font-size: 1.05em;
+  transition: transform 0.2s ease;
+  transform-origin: left center;
+  display: inline-block;
+}
+
+.education-title:hover {
+  transform: scale(1.02);
 }
 
 .education-date {
   color: #777;
   font-size: 0.9em;
   white-space: nowrap;
+  transition: transform 0.2s ease;
+  transform-origin: right center;
+  display: inline-block;
+}
+
+.education-date:hover {
+  transform: scale(1.02);
 }
 
 .education-school {
@@ -455,6 +479,24 @@ h2:hover {
   border-radius: 20px;
   color: #333;
   font-size: 0.9em;
+}
+
+.skill-bubble {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: #333;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transform-origin: center;
+}
+
+.skill-bubble:hover {
+  background: rgba(0, 0, 0, 0.15);
+  color: #333;
 }
 
 @media (max-width: 768px) {

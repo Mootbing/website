@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 
 interface HoverTarget {
-  type: 'header' | 'contact' | 'button'
+  type: 'header' | 'contact' | 'button' | 'skill'
   bounds: DOMRect
 }
 
@@ -23,6 +23,16 @@ export default function BlobCursor() {
     const checkHoverState = (clientX: number, clientY: number): HoverTarget | null => {
       const target = document.elementFromPoint(clientX, clientY) as HTMLElement
       if (!target) return null
+
+      // Check for skill bubble
+      const skillBubble = target.closest('.skill-bubble')
+      if (skillBubble) {
+        const rect = skillBubble.getBoundingClientRect()
+        return {
+          type: 'skill',
+          bounds: new DOMRect(rect.left - 2, rect.top - 2, rect.width + 4, rect.height + 4),
+        }
+      }
 
       // Check for contact link
       const contactLink = target.closest('.contact-link')
@@ -92,10 +102,11 @@ export default function BlobCursor() {
 
       // Update class based on hover type (only when it changes)
       if (hoverType !== lastHoverTypeRef.current) {
-        blob.classList.remove('hover-header', 'hover-contact', 'hover-button')
+        blob.classList.remove('hover-header', 'hover-contact', 'hover-button', 'hover-skill')
         if (hoverType === 'header') blob.classList.add('hover-header')
         else if (hoverType === 'contact') blob.classList.add('hover-contact')
         else if (hoverType === 'button') blob.classList.add('hover-button')
+        else if (hoverType === 'skill') blob.classList.add('hover-skill')
         lastHoverTypeRef.current = hoverType
       }
 

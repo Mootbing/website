@@ -82,7 +82,7 @@ export default function SkillsSection() {
         className={`skills-list ${isCollapsed ? 'collapsed' : ''} ${isAnimating ? 'animating' : ''}`}
       >
         {skills.map((skill, index) => (
-          <span key={index} className="skill-tag">
+          <span key={index} className="skill-bubble">
             {skill}
           </span>
         ))}
