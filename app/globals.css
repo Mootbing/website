@@ -124,12 +124,6 @@ h1 {
   color: #333;
   margin-bottom: 0;
   display: inline-block;
-  transition: transform 0.2s ease;
-  transform-origin: left center;
-}
-
-h1:hover {
-  transform: scale(1.02);
 }
 
 .contact {
@@ -216,6 +210,8 @@ h2:hover {
 .experience-date:hover {
   transform: scale(1.02);
 }
+
+.experience-company {
   color: #666;
   font-size: 0.95em;
   margin-bottom: 8px;
@@ -512,5 +508,9 @@ h2:hover {
   }
   .contact {
     flex-wrap: nowrap;
+  }
+  a[href*="Jason_Xu.pdf"] {
+    top: 20px !important;
+    right: 20px !important;
   }
 }

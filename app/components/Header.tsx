@@ -6,9 +6,6 @@ export default function Header() {
         <div className="header-text">
           <div className="header-name-row">
             <h1>Jason Xu</h1>
-            <a href="/Jason_Xu.pdf" download="resume.pdf" className="contact-link download-link">
-              [save .pdf?]
-            </a>
           </div>
           <div className="contact">
             <a href="mailto:him@jasonxu.me" className="contact-link">
